@@ -9,7 +9,7 @@ Regular expression, or regex, is a character pattern that matches strings or pie
 
 What do regexes look like? Well let’s examine one example: 
 
-a(b|c) 
+```a(b|c) ```
 
 In this regex, the or operator is used ( | ). Let’s translate these characters: 
 
@@ -19,18 +19,18 @@ The a, is outside of the parenthesis, which capture both a b and a c separated b
 Let's try a more complicated example. 
 
 
-(\W|^)[\w.\-]{0,25}@(yahoo|hotmail|gmail)\.com(\W|$)
+``` (\W|^)[\w.\-]{0,25}@(yahoo|hotmail|gmail)\.com(\W|$) ```
 
 In this example, the regex searches for emails from three different sites, yahoo, hotmail and gmail. 
 
-The \\W at the beginning filters for any character that doesn’t fit in typical email configurations (anything that isn’t a number, letter or underscore). 
+The ``` \\W ``` at the beginning filters for any character that doesn’t fit in typical email configurations (anything that isn’t a number, letter or underscore). 
 
 This is followed by a vertical line and a ^ symbol. This symbol searches for any email address that starts at a new line with no characters before it. 
 
-[\w.\-]  searches for any characters that are email compatible (letters, numbers, underscores, periods and hyphens).
+``` [\w.\-] ``` searches for any characters that are email compatible (letters, numbers, underscores, periods and hyphens).
 
 
-{0, 25} represents 0 to 25 characters that exist before the @ symbol.  
+``` {0, 25} ``` represents 0 to 25 characters that exist before the @ symbol.  
 
 
 Here is a visual of how regexes could be viewed like a water filter, grabbing what fits, and leaving behind what doesn't: 
@@ -74,8 +74,9 @@ The output of this example would be true, as it is testing for whether the begin
 
 Let’s see the dollar anchor in action: 
 
-const brks = ‘Brookson’;
-console.log(/n$/.test(str));
+``` const brks = ‘Brookson’; ```
+
+``` console.log(/n$/.test(str)); ```
 
 This output would also be true, as it is testing for whether the beginning of the string ends with the letter n. 
 
@@ -105,7 +106,7 @@ Here are some examples of quantifiers
 ### OR Operator
 A vertical line | , serves as an or operator. 
 
-For instance a(b|c) matches instances where a is followed by b or a is followed by c. 
+For instance ``` a(b|c) ``` matches instances where a is followed by b or a is followed by c. 
 ### Character Classes
 
 Character classes refer to specific types of characters. For example, you can differentiate between letters and numbers. 
@@ -129,7 +130,7 @@ In JavaScript there are 6 types of flags:
 
 Adding parenthesis to your regex search will create a subpattern. Subpatterns allow for groups of characters to be searched for, and can search for those characters in relation to those outside of the parenthesis. 
 
-For instance in the a(b|c) example, both b and c are captured, and can be searched in combination with the a outside of the parenthesis. 
+For instance in the ``` a(b|c) ```example, both b and c are captured, and can be searched in combination with the a outside of the parenthesis. 
 
 It functions almost like order of operations. 
 ### Bracket Expressions
@@ -138,7 +139,7 @@ Bracket expressions matches characters within the character, or excludes those c
 
 An example: 
 
-[a-d] would search and match any character within the range of a to d, (a,b,c and d).
+``` [a-d] ``` would search and match any character within the range of a to d, (a,b,c and d).
 
 ### Boundaries
 
@@ -149,7 +150,7 @@ There are three positions that a referred to as boundaries.
 
 For example: 
 
-\bword\b 
+``` \bword\b ```
 
 in reference to the string 
 
